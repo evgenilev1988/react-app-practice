@@ -8,7 +8,7 @@ import AppHeader from './components/appheader';
 import * as serviceWorker from './serviceWorker';
 
 
-ReactDOM.render(<AppHeader title="Some title"></AppHeader>, document.getElementById('header'));
+ReactDOM.render(<AppHeader customHeader="header-style"></AppHeader>, document.getElementById('header'));
 ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(<Game />,document.getElementById('footer'));
 
