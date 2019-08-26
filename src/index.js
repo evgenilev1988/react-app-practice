@@ -4,7 +4,6 @@ import './styles/index.css';
 import App from './components/App';
 //import Header from './components/Header';
 import Game from './components/footer';
-import CustomButton from './components/button';
 import AppHeader from './components/appheader';
 import * as serviceWorker from './serviceWorker';
 

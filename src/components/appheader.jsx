@@ -1,13 +1,12 @@
-import React,{components} from 'react';
+import React from 'react';
 import CustomButton from './button';
 
 
 
 class AppHeader extends React.Component {
-  constructor(props){
-    super(props);
-    debugger;
-  }
+  //constructor(props){
+  //  super(props);
+  //}
 
   render() {
     return (
@@ -17,6 +16,6 @@ class AppHeader extends React.Component {
       </div>
     );
   }
-}
+} 
 
 export default AppHeader;
