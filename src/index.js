@@ -1,10 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './styles/index.css';
+import App from './components/App';
+//import Header from './components/Header';
+import Game from './components/footer';
+import CustomButton from './components/button';
+import AppHeader from './components/appheader';
 import * as serviceWorker from './serviceWorker';
 
+
+ReactDOM.render(<AppHeader title="Some title"></AppHeader>, document.getElementById('header'));
 ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Game />,document.getElementById('footer'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
