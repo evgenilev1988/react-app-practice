@@ -5,13 +5,13 @@ class CustomButton extends React.Component {
     super(props);
   }
 
-  toggleClass() {
-    console.log('clicked');
-  };
+  childHandleClick(e) {
+    this.props.onBigButtonClick(this.props.name);
+  }
 
   render() {
     return (
-      <div className={this.props.activeState ? "active" : null} onClick={this.toggleClass}>{this.props.name}</div>
+      <div className={this.props.activeState ? "active" : ""} onClick={this.childHandleClick.bind(this)}>{this.props.name}</div>
     );
   }
 }

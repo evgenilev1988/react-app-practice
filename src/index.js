@@ -7,8 +7,22 @@ import Game from './components/footer';
 import AppHeader from './components/appheader';
 import * as serviceWorker from './serviceWorker';
 
+const headerItems = {
+    header:[{
+        title:"Home",
+        active:true
+    },
+    {
+        title:"News",
+        active:false
+    },
+    {
+        title:"Contact",
+        active:false
+    }]
+}
 
-ReactDOM.render(<AppHeader customHeader="header-style"></AppHeader>, document.getElementById('header'));
+ReactDOM.render(<AppHeader customHeader="header-style" headerProperties={headerItems}></AppHeader>, document.getElementById('header'));
 ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(<Game />,document.getElementById('footer'));
 

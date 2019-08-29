@@ -1,29 +1,45 @@
 import React from 'react';
 import CustomButton from './button';
 
-
-
 class AppHeader extends React.Component {
   constructor(props) {
     super(props);
+    this.headerItems = this.props.headerProperties.header.map((element, index) => {
+      return <CustomButton name={element.title} activeState={element.active} key={index} onBigButtonClick={this.clicked.bind(this)}></CustomButton>;
+    });
 
     this.state = {
-      active:""
+      menu: this.props.headerProperties.header
     };
   }
 
   componentDidMount() {
-    var header = document.getElementsByClassName(this.props.customHeader)[0];
+    console.log('componentDidMount');
   }
 
+  clicked(clickedName) {
+    var menuItems = this.state.menu;
+
+    for (let i = 0; i < menuItems.length; i++) {
+        menuItems[i].active = menuItems[i].title == clickedName;
+    }
+
+    this.setState({
+      menu: menuItems
+    });
+  }
+
+  drawMenu() {
+    var menu = this.state.menu.map((element, index) => {
+      return <CustomButton name={element.title} activeState={element.active} key={index} onBigButtonClick={this.clicked.bind(this)}></CustomButton>;
+    });
+    return menu;
+  }
 
   render() {
     return (
       <div className={this.props.customHeader}>
-        <CustomButton name="Home" activeState="active"></CustomButton>
-        <CustomButton name="News"></CustomButton>
-        <CustomButton name="Contact"></CustomButton>
-        <CustomButton name="About"></CustomButton>
+        {this.drawMenu()}
       </div>
     );
   }
