@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ReactDOM from 'react-dom';
 import CustomButton from './button.js';
 import HomeScreen from '../pages/home';
 import NewsScreen from '../pages/news';
@@ -54,11 +54,16 @@ export default class App extends React.Component {
     return menu;
   }
 
+  logout(){
+    ReactDOM.render(<LoginScreen headerProperties={this.props.headerProperties}></LoginScreen>, document.getElementById('root'));
+  }
+
   render() {
     return (
       <div>
         <div className={this.props.customHeader}>
           {this.drawMenu()}
+          <div onClick={this.logout.bind(this)} className="logout">logout</div>
           <div>{this.state.userName}</div>
         </div>
         {this.drawView()}
