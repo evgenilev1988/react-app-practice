@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
-import App from './components/App';
 //import Header from './components/Header';
-import Game from './components/footer';
-import AppHeader from './components/appheader';
+//import Game from './components/footer';
+import App from './components/App';
+import Home from './pages/home';
 import * as serviceWorker from './serviceWorker';
+import LoginScreen from './pages/login';
+
 
 const headerItems = {
     header:[{
@@ -22,9 +24,8 @@ const headerItems = {
     }]
 }
 
-ReactDOM.render(<AppHeader customHeader="header-style" headerProperties={headerItems}></AppHeader>, document.getElementById('header'));
-ReactDOM.render(<App />, document.getElementById('root'));
-ReactDOM.render(<Game />,document.getElementById('footer'));
+ReactDOM.render(<LoginScreen headerProperties={headerItems}></LoginScreen>, document.getElementById('root'));
+//ReactDOM.render(<App customHeader="header-style" startingPage="Home" headerProperties={headerItems}></App>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
