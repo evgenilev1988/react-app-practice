@@ -24,9 +24,10 @@ export default class App extends React.Component {
   clicked(clickedName) {
     var menuItems = this.state.menu;
 
-    for (let i = 0; i < menuItems.length; i++) {
-      menuItems[i].active = menuItems[i].title === clickedName;
-    }
+    menuItems = menuItems.map((value)=>{
+      value.active = value.title === clickedName;
+      return value;
+    });
 
     this.setState({
       menu: menuItems,
